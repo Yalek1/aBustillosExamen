@@ -4,6 +4,7 @@
              x:Class="aBustillosExamen.Views.Registro">
     <VerticalStackLayout Spacing="20"
                          Padding="25">
+        
         <Label x:Name="lblUsuario"/>
 
         <Label 
@@ -102,7 +103,6 @@
                    Grid.Column="0"/>
 
             <Entry x:Name="txtPagoInicial"
-                   IsEnabled="False"
                    Grid.Row="2"
                    Grid.Column="1"/>
 
@@ -118,10 +118,10 @@
                    Grid.Row="3"
                    Grid.Column="1"/>
         </Grid>
-        
+
         <Button x:Name="btnResumen"
                 Text="Ver Resumen"
-                Clicked="btnResumen_Clicked"
-        
+                Clicked="btnResumen_Clicked"/>
+
     </VerticalStackLayout>
 </ContentPage>

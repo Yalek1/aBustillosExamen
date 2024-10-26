@@ -2,7 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="aBustillosExamen.Views.Resumen">
-    <VerticalStackLayout>
+    <VerticalStackLayout Spacing="20"
+                         Padding="25">
+
+        <Label x:Name="lblUsuario"/>
+        
         <Label 
             Text="Resumen"
             VerticalOptions="Center" 
@@ -69,7 +73,7 @@
             <Label Text="Pago Total"
                    Grid.Row="7"
                    Grid.Column="0"/>
-            <Label x:Name="lblPagoToal"
+            <Label x:Name="lblPagoTotal"
                    Grid.Row="7"
                    Grid.Column="1"/>
         </Grid>

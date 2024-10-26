@@ -3,8 +3,9 @@ namespace aBustillosExamen.Views;
 public partial class Login : ContentPage
 {
 
-    string[] user = { "estudiante2024", "examen1", "NombreEstudiante" };
+    string[] user = { "estudiante2024", "examen1", "Alexander" };
     string[] pass = { "uisrael2024", "parcial1", "2024" };
+    string userRegister = "";
     public Login()
     {
         InitializeComponent();
@@ -13,9 +14,6 @@ public partial class Login : ContentPage
     private void btnIniciarSesion_Clicked(object sender, EventArgs e)
     {
         bool loginSuccessful = false;
-        string userRegister = "";
-        string usuario = txtUsuario.Text;
-        Navigation.PushAsync(new Registro(usuario));
 
         for (int i = 0; i < user.Length; i++)
         {
@@ -23,14 +21,13 @@ public partial class Login : ContentPage
             {
                 loginSuccessful = true;
                 userRegister = user[i];
-                break;
             }
         }
 
         if (loginSuccessful)
         {
             DisplayAlert("Login exitoso", "Bienvenido " + userRegister, "OK");
-            Navigation.PushAsync(new Registro());
+            Navigation.PushAsync(new Registro(userRegister));
         }
         else
         {
@@ -40,6 +37,18 @@ public partial class Login : ContentPage
 
     private void btnAcerca_Clicked(object sender, EventArgs e)
     {
-
+        if (string.IsNullOrWhiteSpace(txtUsuario.Text) ||
+            string.IsNullOrWhiteSpace(txtContraseña.Text))
+        {
+            DisplayAlert("Error", "Todos los campos deben ser llenados", "OK");
+        }
+        else
+        {
+            string message = "Usuario Conectado " + txtUsuario.Text + "\n" +
+            "\nNombre: Alexander Bustillos" +
+            "\nCurso: Octavo B" +
+            "\nCarrera: Sistemas de Información";
+            DisplayAlert("Información Estudiante", message, "Cerrar");
+        }
     }
 }
